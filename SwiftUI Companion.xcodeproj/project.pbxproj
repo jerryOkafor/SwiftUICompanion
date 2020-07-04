@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,15 @@
 		C47C388F24AD6160009EA7C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47C388D24AD6160009EA7C8 /* LaunchScreen.storyboard */; };
 		C47C389A24AD6160009EA7C8 /* SwiftUI_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C389924AD6160009EA7C8 /* SwiftUI_CompanionTests.swift */; };
 		C47C38A524AD6160009EA7C8 /* SwiftUI_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C38A424AD6160009EA7C8 /* SwiftUI_CompanionUITests.swift */; };
+		C47C38B424AD6812009EA7C8 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47C38B324AD6812009EA7C8 /* Icons.xcassets */; };
+		C47C38B724AD6B1C009EA7C8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C38B624AD6B1C009EA7C8 /* R.generated.swift */; };
+		C47C38BB24AD6BCD009EA7C8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C38BA24AD6BCD009EA7C8 /* UIColor+Extension.swift */; };
+		C47C38BF24ADBC2A009EA7C8 /* TextCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C38BE24ADBC2A009EA7C8 /* TextCompanion.swift */; };
+		C47C38C224ADD1B6009EA7C8 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = C47C38C124ADD1B6009EA7C8 /* Rswift */; };
+		C47C38C524ADD233009EA7C8 /* Ink in Frameworks */ = {isa = PBXBuildFile; productRef = C47C38C424ADD233009EA7C8 /* Ink */; };
+		C47C38C824AEAB3D009EA7C8 /* LoadingVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C38C724AEAB3D009EA7C8 /* LoadingVIew.swift */; };
+		C47C38CA24AEAB59009EA7C8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C38C924AEAB59009EA7C8 /* ActivityIndicator.swift */; };
+		C47C38CC24AEAC21009EA7C8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C38CB24AEAC21009EA7C8 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,13 @@
 		C47C38A024AD6160009EA7C8 /* SwiftUI CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47C38A424AD6160009EA7C8 /* SwiftUI_CompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CompanionUITests.swift; sourceTree = "<group>"; };
 		C47C38A624AD6160009EA7C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C47C38B324AD6812009EA7C8 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		C47C38B624AD6B1C009EA7C8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		C47C38BA24AD6BCD009EA7C8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		C47C38BE24ADBC2A009EA7C8 /* TextCompanion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCompanion.swift; sourceTree = "<group>"; };
+		C47C38C724AEAB3D009EA7C8 /* LoadingVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVIew.swift; sourceTree = "<group>"; };
+		C47C38C924AEAB59009EA7C8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		C47C38CB24AEAC21009EA7C8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47C38C224ADD1B6009EA7C8 /* Rswift in Frameworks */,
+				C47C38C524ADD233009EA7C8 /* Ink in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +97,7 @@
 		C47C387624AD615D009EA7C8 = {
 			isa = PBXGroup;
 			children = (
+				C47C38B624AD6B1C009EA7C8 /* R.generated.swift */,
 				C47C388124AD615D009EA7C8 /* SwiftUI Companion */,
 				C47C389824AD6160009EA7C8 /* SwiftUI CompanionTests */,
 				C47C38A324AD6160009EA7C8 /* SwiftUI CompanionUITests */,
@@ -99,10 +118,12 @@
 		C47C388124AD615D009EA7C8 /* SwiftUI Companion */ = {
 			isa = PBXGroup;
 			children = (
+				C47C38BC24ADBC05009EA7C8 /* UI */,
+				C47C38B824AD6BCD009EA7C8 /* Util */,
+				C47C38B224AD67FB009EA7C8 /* Assets */,
 				C47C388224AD615D009EA7C8 /* AppDelegate.swift */,
 				C47C388424AD615D009EA7C8 /* SceneDelegate.swift */,
 				C47C388624AD615D009EA7C8 /* ContentView.swift */,
-				C47C388824AD6160009EA7C8 /* Assets.xcassets */,
 				C47C388D24AD6160009EA7C8 /* LaunchScreen.storyboard */,
 				C47C389024AD6160009EA7C8 /* Info.plist */,
 				C47C388A24AD6160009EA7C8 /* Preview Content */,
@@ -136,6 +157,58 @@
 			path = "SwiftUI CompanionUITests";
 			sourceTree = "<group>";
 		};
+		C47C38B224AD67FB009EA7C8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C47C388824AD6160009EA7C8 /* Assets.xcassets */,
+				C47C38B324AD6812009EA7C8 /* Icons.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C47C38B824AD6BCD009EA7C8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C47C38B924AD6BCD009EA7C8 /* Extension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		C47C38B924AD6BCD009EA7C8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C47C38BA24AD6BCD009EA7C8 /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C47C38BC24ADBC05009EA7C8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C47C38C624ADD256009EA7C8 /* Custom */,
+				C47C38BD24ADBC0E009EA7C8 /* Text */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C47C38BD24ADBC0E009EA7C8 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				C47C38BE24ADBC2A009EA7C8 /* TextCompanion.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		C47C38C624ADD256009EA7C8 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				C47C38C724AEAB3D009EA7C8 /* LoadingVIew.swift */,
+				C47C38C924AEAB59009EA7C8 /* ActivityIndicator.swift */,
+				C47C38CB24AEAC21009EA7C8 /* WebView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +225,10 @@
 			dependencies = (
 			);
 			name = "SwiftUI Companion";
+			packageProductDependencies = (
+				C47C38C124ADD1B6009EA7C8 /* Rswift */,
+				C47C38C424ADD233009EA7C8 /* Ink */,
+			);
 			productName = "SwiftUI Companion";
 			productReference = C47C387F24AD615D009EA7C8 /* SwiftUI Companion.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +301,10 @@
 				Base,
 			);
 			mainGroup = C47C387624AD615D009EA7C8;
+			packageReferences = (
+				C47C38C024ADD1B6009EA7C8 /* XCRemoteSwiftPackageReference "R.swift" */,
+				C47C38C324ADD233009EA7C8 /* XCRemoteSwiftPackageReference "ink" */,
+			);
 			productRefGroup = C47C388024AD615D009EA7C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +323,7 @@
 			files = (
 				C47C388F24AD6160009EA7C8 /* LaunchScreen.storyboard in Resources */,
 				C47C388C24AD6160009EA7C8 /* Preview Assets.xcassets in Resources */,
+				C47C38B424AD6812009EA7C8 /* Icons.xcassets in Resources */,
 				C47C388924AD6160009EA7C8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,8 +350,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C47C388324AD615D009EA7C8 /* AppDelegate.swift in Sources */,
+				C47C38BF24ADBC2A009EA7C8 /* TextCompanion.swift in Sources */,
 				C47C388524AD615D009EA7C8 /* SceneDelegate.swift in Sources */,
 				C47C388724AD615D009EA7C8 /* ContentView.swift in Sources */,
+				C47C38CA24AEAB59009EA7C8 /* ActivityIndicator.swift in Sources */,
+				C47C38B724AD6B1C009EA7C8 /* R.generated.swift in Sources */,
+				C47C38CC24AEAC21009EA7C8 /* WebView.swift in Sources */,
+				C47C38C824AEAB3D009EA7C8 /* LoadingVIew.swift in Sources */,
+				C47C38BB24AD6BCD009EA7C8 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +682,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C47C38C024ADD1B6009EA7C8 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+		C47C38C324ADD233009EA7C8 /* XCRemoteSwiftPackageReference "ink" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnsundell/ink.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C47C38C124ADD1B6009EA7C8 /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C47C38C024ADD1B6009EA7C8 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
+		C47C38C424ADD233009EA7C8 /* Ink */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C47C38C324ADD233009EA7C8 /* XCRemoteSwiftPackageReference "ink" */;
+			productName = Ink;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C47C387724AD615D009EA7C8 /* Project object */;
 }
