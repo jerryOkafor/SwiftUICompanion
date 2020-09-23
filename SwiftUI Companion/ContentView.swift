@@ -6,27 +6,25 @@
 //  Copyright © 2020 Jerry Okafor. All rights reserved.
 //
 
-//import SwiftUI
-//
-//struct ContentView: View {
-//    var body: some View {
-//        Text("Hello, World!")
-//    }
-//}
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
-
-
 import SwiftUI
 
 struct ContentView: View {
     @State var isDrawerOpen: Bool = false
 
     var body: some View {
+        
+        let navDragGesture = DragGesture()
+            .onEnded({
+            if $0.translation.width > 100{
+                withAnimation {self.isDrawerOpen = true}
+            }
+            
+            if $0.translation.width < -100{
+                withAnimation {self.isDrawerOpen = false}
+            }
+            
+        })
+        
         return ZStack{
             NavigationView{
                 GeometryReader{geo in
@@ -47,11 +45,11 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea([.top,.bottom])
                 .transition(.move(edge: .leading))
                 .animation(.interpolatingSpring(stiffness: 50, damping: 1))
-                .onTapGesture {
-                    if self.isDrawerOpen{self.isDrawerOpen.toggle()}
-            }
+                
             
-        }
+        }.onTapGesture {
+                if self.isDrawerOpen{self.isDrawerOpen.toggle()}
+        }.gesture(navDragGesture)
     }
 }
 
@@ -109,11 +107,14 @@ struct DrawerContent : View{
     private let backgroundDark = LinearGradient(gradient: Gradient(colors: [Color(UIColor(hex: "#3b3d43")), Color(UIColor(hex: "#3c4561"))]), startPoint: .top, endPoint: .bottom)
 
 
-    let menus = [Menu(title: "Quizs", icon:R.image.quizes()),
-                 Menu(title: "My Chats", icon:R.image.myChats()),
-                 Menu(title: "Leaderboard", icon:R.image.leaderBoard()),
-                 Menu(title: "Notiifcations", icon:R.image.leaderBoard()),
-                 Menu(title: "Earn Coin", icon:R.image.earnCoin())]
+    let menus = [Menu(title: "Text", icon:R.image.quizes()),
+                 Menu(title: "Label", icon:R.image.myChats()),
+                 Menu(title: "TextEditor", icon:R.image.leaderBoard()),
+                 Menu(title: "Image", icon:R.image.leaderBoard()),
+                 Menu(title: "Shape", icon:R.image.earnCoin()),
+                 Menu(title: "ProgressView", icon:R.image.earnCoin()),
+                 Menu(title: "Map", icon:R.image.earnCoin()),
+    ]
     
     init() {
         UITableView.appearance().separatorStyle = .none
@@ -127,41 +128,32 @@ struct DrawerContent : View{
                 Spacer(minLength: 0).frame(height: 30)
                 DrawerHeader()
                 Spacer(minLength: 0).frame(height: 10)
-                
+                MenuItem(menu: Menu(title: "Home", icon: R.image.leaderBoard()))
+                    .frame(width: geo.size.width, height: 30)
                 List{
                     Section(header: Text("View").font(.system(size: 20))) {
                        ForEach(self.menus, id: \.self) { menu in
-                            HStack(alignment: .center, spacing: 20) {
-                                Image(uiImage: menu.icon)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                                    .padding(EdgeInsets(top: 4, leading: 20, bottom: 4, trailing: 0))
-
-                                Text(menu.title)
-                                    .font(.system(size: 18))
-                                    .padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-                            }.frame(minWidth: 0, maxWidth: geo.size.width,alignment: .leading)
+                            MenuItem(menu: menu)
                         }
                         
                     }
                     
-                    Section(header: Text("Layout").font(.system(size: 20))) {
-                       ForEach(self.menus, id: \.self) { menu in
-                            HStack(alignment: .center, spacing: 20) {
-                                Image(uiImage: menu.icon)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                                    .padding(EdgeInsets(top: 4, leading: 20, bottom: 4, trailing: 0))
-
-                                Text(menu.title)
-                                    .font(.system(size: 18))
-                                    .padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-                            }.frame(minWidth: 0, maxWidth: geo.size.width,alignment: .leading)
-                        }
-                        
-                    }
+//                    Section(header: Text("Layout").font(.system(size: 20))) {
+//                       ForEach(self.menus, id: \.self) { menu in
+//                            HStack(alignment: .center, spacing: 20) {
+//                                Image(uiImage: menu.icon)
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width: 30, height: 30)
+//                                    .padding(EdgeInsets(top: 4, leading: 20, bottom: 4, trailing: 0))
+//
+//                                Text(menu.title)
+//                                    .font(.system(size: 18))
+//                                    .padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+//                            }.frame(minWidth: 0, maxWidth: geo.size.width,alignment: .leading)
+//                        }
+//
+//                    }
                     
                     
                     }.listStyle(GroupedListStyle())
@@ -175,6 +167,27 @@ struct DrawerContent : View{
             .frame(width: geo.size.width, height: geo.size.height,alignment: .top)
             .background(self.colorScheme == .dark ? self.backgroundDark : self.backgroundLight)
 
+        }
+    }
+}
+
+struct MenuItem: View {
+    let menu:Menu
+    
+    var body: some View{
+        GeometryReader{geo in
+            HStack(alignment: .center, spacing: 20) {
+//                Image(uiImage: self.menu.icon)
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 30, height: 30)
+//                    .padding(EdgeInsets(top: 4, leading: 20, bottom: 4, trailing: 0))
+                Spacer().fixedSize()
+
+                Text(self.menu.title)
+                    .font(.system(size: 18))
+                    .padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+            }.frame(minWidth: 0, maxWidth: geo.size.width,alignment: .leading)
         }
     }
 }
